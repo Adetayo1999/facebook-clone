@@ -9,10 +9,13 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 function MessageSender(){
     const handleSubmit = (e) =>{
         e.preventDefault()
+
+        setInput('');
+        setImage('');
     }
     const [input,setInput] =useState('');
     const [image , setImage] = useState('')
-    console.log(input)
+    
 return(
         <div className="message">
            <div className="message-top">
