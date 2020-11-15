@@ -10,8 +10,9 @@ import {Avatar, IconButton} from '@material-ui/core'
 import ForumIcon from '@material-ui/icons/Forum'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import AddIcon from '@material-ui/icons/Add'
+import { useStateValue } from './StateProvider'
 function Header(){
-
+ const [{user},dispatch]= useStateValue();
 return(
         <div className="header">
             <div className="header__left">
@@ -41,8 +42,8 @@ return(
                 </div>
                 <div className="header__right">
                 <div className="user-info">
-                       <Avatar src={require('./images/avatar.jpg')}/>
-                       <h4>Adetayoh</h4>
+                       <Avatar src={user.photoURL}/>
+                     <h4>{user.displayName}</h4>
                 </div>
                 <IconButton>
                         <AddIcon/>
